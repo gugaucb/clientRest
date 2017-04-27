@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+
+	<persistence-unit name="forge-default" transaction-type="JTA">
+		<description>Forge Persistence Unit</description>
+		<jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+		<class>br.jus.trf1.pocArquitetura.entidades.Funcionario</class>
+		
+		<properties>
+			<property name="packagesToScan" value="br.jus.trf1.pocArquitetura.entidades"/>
+			 <property name="jboss.as.jpa.managed" value="true" />
+			 <property name="org.hibernate.flushMode" value="COMMIT"/>
+			 <property name="hibernate.hbm2ddl.auto" value="update"/>
+			 <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+			 <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+        	 <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
+		</properties>
+		
+		
+	</persistence-unit>
+</persistence>
